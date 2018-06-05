@@ -11,10 +11,13 @@ public class Indexer {
     public Indexer() {
         try {
             indexReader = DirectoryReader.open(FSDirectory.open(Paths.get("data/index")));
-        }
-        catch(IOException e) {
+        } catch (IOException e) {
             System.err.println("Error opening index" + e);
             e.printStackTrace();
         }
     }
+
+        public IndexReader getIndexReader() {
+            return indexReader;
+        }
 }
